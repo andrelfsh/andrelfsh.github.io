@@ -1,150 +1,79 @@
-@import url('https://fonts.googleapis.com/css?family=Times+New+Roman&display=swap');
-
-:root {
-    --bgColor: #181822;
-    --bgColor2: #000000;
-    --accentColor: #9c823b;
-    --font: 'Times New Roman', serif;
-    --delay: .3s;
-}
-
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*
+1C1D22 
+313B44 
+E62815 
+AAA8AD
+*/
+
+body {
+    background-color: #1C1D22; /* Azul escuro moderno */
+    color: #AAA8AD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
-    font-family: var(--font);
-    background: radial-gradient(ellipse at bottom, var(--bgColor) 0%, var(--bgColor2) 100%);
-    opacity: 0;
-    animation: 1s ease-out var(--delay) 1 transitionAnimation;
-    animation-fill-mode: forwards;
-    background-repeat: no-repeat;
-    background-size: cover;
+    padding: 20px;
 }
 
-#profilePicture, #profilePicture img {
-    width: 96px;
-    height: 96px;
-    display: block;
-    margin: 40px auto 20px;
-    border-radius: 50%;
-}
-
-#userName {
-    color: var(--accentColor);
-    font-size: 1rem;
-    font-weight: bold;
+.container {
+    width: 100%;
+    max-width: 400px;
     text-align: center;
 }
 
-#links {
-    max-width: 675px;
-    margin: 27px auto;
+header {
+    margin-bottom: 32px;
+}
+
+.profile-pic {
+    width: 96px;
+    height: 96px;
+    background-image: url('https://github.com/andrelfsh.png'); /* Puxa sua foto do GitHub automaticamente */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 1px solid #E62815; /* Adicionei uma borda para destacar */
+    margin: 0 auto 16px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 0.9rem;
+    color: #AAA8AD;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .link {
-    background-color: transparent;
-    color: var(--accentColor);
-    border: 2px solid var(--accentColor);
-    border-radius: 10px;
-    font-size: 1rem;
-    text-align: center;
     display: block;
-    margin: 10px;
-    padding: 10px;
+    padding: 16px;
     text-decoration: none;
-    transition: background-color .25s, color .25s;
+    color: #AAA8AD;
+    background-color: #1C1D22;
+    border: 1px solid #313B44;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .link:hover {
-    background-color: var(--accentColor);
-    color: var(--bgColor);
-}
-
-#hashtag {
-    padding-bottom: 20px;
-    color: var(--accentColor);
-    font-size: 1rem;
-    text-align: center;
-    background: linear-gradient(90deg, var(--bgColor), var(--accentColor), var(--bgColor));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
-    animation: animate 3s linear var(--delay) infinite;
-}
-
-@keyframes transitionAnimation {
-    0% { opacity: 0; transform: translateY(-10px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes animate {
-    0% { background-position: -500%; }
-    100% { background-position: 500%; }
-}
-
-/* Popup Styles */
-.overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    visibility: hidden;
-    opacity: 0;
-    transition: .5s ease-in-out;
-}
-
-.popup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    background-color: var(--bgColor);
-    transform: scale(0);
-    transition: .5s ease-in-out;
-}
-
-.popup-photo img {
-    width: 100%;
-}
-
-.popup-quote {
-    font-style: italic;
-    color: var(--accentColor);
-    padding: 20px;
-    text-align: center;
-}
-
-.overlay:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.overlay:target .popup {
-    transform: scale(1);
-}
-
-.popup-close {
-    position: absolute;
-    top: -1rem;
-    right: -1rem;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.7rem;
-    border-radius: 50%;
-    background-color: var(--bgColor);
-    color: var(--accentColor);
-    text-align: center;
-    line-height: 2.7rem;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.popup-close:hover {
-    background-color: var(--accentColor);
-    color: var(--bgColor);
+    background-color: #1C1D22;
+    transform: translateY(-2px);
+    border-color: #E62815;
 }

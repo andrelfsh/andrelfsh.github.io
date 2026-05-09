@@ -39,7 +39,7 @@ header {
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    border: 1px solid #E62815; /* Adicionei uma borda para destacar */
+    border: 1px solid #313B44; /* Adicionei uma borda para destacar */
     margin: 0 auto 16px;
 }
 
@@ -66,7 +66,7 @@ p {
     text-decoration: none;
     color: #AAA8AD;
     background-color: #1C1D22;
-    border: 1px solid #313B44;
+    border: 1px solid #E62815;
     border-radius: 8px;
     font-weight: 500;
     transition: all 0.3s ease;
